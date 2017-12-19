@@ -18,3 +18,11 @@ OSMnx is a python package that allows one to pull street networks for cities aro
 3. Get to/from node IDs
 4. Using lat/lng pairs of node, query for intersecting streets
 5. Compare street names of intersecting streets with original segment to determine to/from streets
+
+### Example screenshots
+#### OSMnx street segment attributes
+![osmnx_street_segment_attributes](img/osmnx_street_segment_attributes.png)
+#### OSMnx "from" node attributes
+![osmnx_from_node_attributes](img/osmnx_from_node_attributes.png)
+#### OSMnx intersecting street names
+![osmnx_intersecting_street_names](img/osmnx_intersecting_street_names.png)
