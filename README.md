@@ -10,6 +10,8 @@ Building on a [solid foundation](https://medium.com/a-r-g-o/introducing-geo-stre
 
 As folks who are in the data weeds day-to-day, it's important to not lose sight of higher-level user experience.
 
+Plan for a launch 1/22/18!
+
 ## Approach
 OSMnx is a python package that allows one to pull street networks for cities around the world. geopandas is a python package for processing geospatial data. Using these two packages as our foundation, we should be able to create a tool that recieves a lat/lng pair and returns a conversational string, such as "Houston Street between Avenue B and Avenue C". Below are the major steps we can follow:
 
