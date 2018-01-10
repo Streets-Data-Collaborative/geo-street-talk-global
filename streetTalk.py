@@ -29,12 +29,13 @@ def streetTalk(point,cityname,networkType='drive'):
     enclosing_from = intersectingStreets(from_id,citymap_edge)
     enclosing_to = intersectingStreets(to_id,citymap_edge)
 
-    street_from  = enclosing_from[1] if enclosing_from[0] == nearest_name else enclosing_from[0]
-    street_to  = enclosing_to[1] if enclosing_to[0] == nearest_name else enclosing_to[0]
-
-    #print(len(citymap_node),len(citymap_edge))
-    conversational = "{} between {} and {}".format(nearest_name,street_from,street_to)
-    #print(conversational)
+    try:
+        street_from  = enclosing_from[1] if enclosing_from[0] == nearest_name else enclosing_from[0]
+        street_to  = enclosing_to[1] if enclosing_to[0] == nearest_name else enclosing_to[0]
+        conversational = "{} between {} and {}".format(nearest_name,street_from,street_to)
+    except:
+        conversational = nearest_name
+        
     return conversational
 
 
