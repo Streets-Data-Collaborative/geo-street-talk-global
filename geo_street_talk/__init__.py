@@ -2,9 +2,6 @@ import osmnx as ox
 import geopandas as gpd
 from shapely.geometry import Point
 
-def test():
-    print('this is geo-street-talk!')
-
 def nearestSegment(point,city):
     '''
     This function takes a lat/lon point and a geodataframe of city shapefile
