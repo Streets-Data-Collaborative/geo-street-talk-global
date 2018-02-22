@@ -3,7 +3,7 @@ _Project lead: David Marulli ([@dmarulli](https://github.com/dmarulli) | david@a
 
 _Primary developer: [@YukunVVan](https://github.com/YukunVVan)_
 
-_Orgs_: [Streets Data Collaborative](https://github.com/Streets-Data-Collaborative) | [ARGO](http://www.argolabs.org)
+_Orgs_: [Streets Data Collaborative](https://www.streetsdatacollaborative.org/) | [ARGO](http://www.argolabs.org)
 
 ## High-level Description
 Imagine looking at any non-cartographical data visualization or UI component (tables, graphs, text, etc.) that aims to display, say, characteristics of the worst potholes in the city. To represent the location, we could display a coordinate (e.g. 40.7217267,-73.9870392), but without looking at a map, where is this?
