@@ -1,0 +1,163 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Welcome to Geo Street Talk! &#8212; Geo_street_talk  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-geo-street-talk">
+<h1>Welcome to Geo Street Talk!<a class="headerlink" href="#welcome-to-geo-street-talk" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Geo Street Talk (GST) enables a slightly more intuitive way of communicating points on a street. We created GST to convert any location coordinate along any cities to a conversational string.</p>
+<p>Imagine looking at any non-cartographical data visualization or UI component (tables, graphs, text, etc.) that aims to display, say, characteristics of the worst potholes in the city. To represent the location, we could display a coordinate (e.g. 40.7217267,-73.9870392), but without looking at a map, where is this?</p>
+<p>One could imagine instead displaying an address (i.e. 263 E Houston St), but, again, without looking at a map, even to a native New Yorker like myself, I don’t know immediately know if this is on the east or west side of the city.</p>
+<p>Building on a <a class="reference external" href="https://medium.com/a-r-g-o/introducing-geo-street-talk-c11bd2306ff1">solid foundation</a>, the deliverable of this project will programmatically output more immediately meaningful descriptions (i.e. “Houston Street between Avenue B and Avenue C”).</p>
+<p>As folks who are in the data weeds day-to-day, it’s important to not lose sight of higher-level user experience.</p>
+<p>Project lead: David Marulli (<a class="reference external" href="https://github.com/dmarulli">&#64;dmarulli</a> | <a class="reference external" href="mailto:david&#37;&#52;&#48;argolabs&#46;org">david<span>&#64;</span>argolabs<span>&#46;</span>org</a>)</p>
+<p>Primary developer: <a class="reference external" href="https://github.com/YukunVVan">&#64;YukunVVan</a></p>
+<p>Orgs: <a class="reference external" href="https://www.streetsdatacollaborative.org">Streets Data Collaborative</a> | <a class="reference external" href="http://www.argolabs.org">ARGO</a></p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>To install the released version, you can use pip:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">geo_street_talk</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+<p>Installation should also install all dependencies:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://geopandas.org/">geopandas</a></li>
+<li><a class="reference external" href="http://toblerity.github.io/shapely">shapely</a></li>
+<li><a class="reference external" href="https://osmnx.readthedocs.io">osmnx</a></li>
+</ul>
+</div>
+<div class="section" id="how-to-use">
+<h2>How to use<a class="headerlink" href="#how-to-use" title="Permalink to this headline">¶</a></h2>
+<p>Use function streetTalk to return a translated address.</p>
+<dl class="function">
+<dt id="geo_street_talk.street">
+<code class="descclassname">geo_street_talk.</code><code class="descname">street</code><span class="sig-paren">(</span><em>longitude</em>, <em>latitude</em>, <em>cityname</em>, <em>networkType='drive'</em><span class="sig-paren">)</span><a class="headerlink" href="#geo_street_talk.street" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function takes a lat/lng pair and a city name as inputs, and returns
+a conversational string stating nearest street as well as enclosing streets.</p>
+<p>longitude: float</p>
+<p>latitude: float</p>
+<p>cityname: string</p>
+<p>networkType: string</p>
+<blockquote>
+<div><p>This is used to generate graph from <code class="docutils literal notranslate"><span class="pre">OSMnx</span></code>. You can also specify several different network types:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">drive</span></code> - get drivable public streets (but not service roads)</p>
+<p><code class="docutils literal notranslate"><span class="pre">drive_service</span></code> - get drivable streets, including service roads</p>
+<p><code class="docutils literal notranslate"><span class="pre">walk</span></code> - get all streets and paths that pedestrians can use (this network type ignores
+one-way directionality)</p>
+<p><code class="docutils literal notranslate"><span class="pre">bike</span></code> - get all streets and paths that cyclists can use</p>
+<p><code class="docutils literal notranslate"><span class="pre">all</span></code> - download all non-private OSM streets and paths</p>
+<p><code class="docutils literal notranslate"><span class="pre">all_private</span></code> - download all OSM streets and paths, including private-access ones</p>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to Geo Street Talk!</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li><a class="reference internal" href="#how-to-use">How to use</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Yukun Wan.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
