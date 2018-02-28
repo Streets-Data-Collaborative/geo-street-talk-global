@@ -1,5 +1,9 @@
 # geo-street-talk-global
-_ARGO team lead: David Marulli ( david@argolabs.org )_
+_Project lead: David Marulli ([@dmarulli](https://github.com/dmarulli) | david@argolabs.org)_
+
+_Primary developer: [@YukunVVan](https://github.com/YukunVVan)_
+
+_Orgs_: [Streets Data Collaborative](https://www.streetsdatacollaborative.org/) | [ARGO](http://www.argolabs.org)
 
 ## High-level Description
 Imagine looking at any non-cartographical data visualization or UI component (tables, graphs, text, etc.) that aims to display, say, characteristics of the worst potholes in the city. To represent the location, we could display a coordinate (e.g. 40.7217267,-73.9870392), but without looking at a map, where is this?
@@ -10,16 +14,14 @@ Building on a [solid foundation](https://medium.com/a-r-g-o/introducing-geo-stre
 
 As folks who are in the data weeds day-to-day, it's important to not lose sight of higher-level user experience.
 
-Plan for a launch 1/22/18!
 
 ## Approach
-OSMnx is a python package that allows one to pull street networks for cities around the world. geopandas is a python package for processing geospatial data. Using these two packages as our foundation, we should be able to create a tool that recieves a lat/lng pair and returns a conversational string, such as "Houston Street between Avenue B and Avenue C". Below are the major steps we can follow:
+[OSMnx](https://github.com/gboeing/osmnx) is a python package that allows one to pull street networks for cities around the world. geopandas is a python package for processing geospatial data. Using these two packages as our foundation, we should be able to create a tool that recieves a lat/lng pair and returns a conversational string, such as "Houston Street between Avenue B and Avenue C". Below are the major steps we follow:
 
 1. Use OSMnx to get a street graph
 2. Given a lat/lng point, query for nearest street segment
-3. Get to/from node IDs
-4. Using lat/lng pairs of node, query for intersecting streets
-5. Compare street names of intersecting streets with original segment to determine to/from streets
+3. Get to/from node IDs of street segment, and query for intersecting streets
+4. Compare street names of intersecting streets with original segment to determine to/from streets
 
 ### Example screenshots
 #### OSMnx street segment attributes
