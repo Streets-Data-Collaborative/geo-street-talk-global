@@ -30,3 +30,7 @@ As folks who are in the data weeds day-to-day, it's important to not lose sight 
 ![osmnx_from_node_attributes](img/osmnx_from_node_attributes.png)
 #### OSMnx intersecting street names
 ![osmnx_intersecting_street_names](img/osmnx_intersecting_street_names.png)
+
+## Usage
+
+Refer http://geo-street-talk.readthedocs.io/en/latest/
