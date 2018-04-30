@@ -70,7 +70,7 @@ How to use
 
 Use function streetTalk to return a translated address.
 
-.. function:: geo_street_talk.street(longitude,latitude,cityname,networkType='drive')
+.. function:: geo_street_talk.streetTalk(longitude,latitude,"cityname-in-Nominatim-format",networkType='drive')
 
   This function takes a lat/lng pair and a city name as inputs, and returns
   a conversational string stating nearest street as well as enclosing streets.
@@ -79,7 +79,7 @@ Use function streetTalk to return a translated address.
 
   latitude: float
 
-  cityname: string
+  cityname: string. See https://nominatim.openstreetmap.org/ for correct Syntax (Ex: "Lafayette,CO")
 
   networkType: string
 
